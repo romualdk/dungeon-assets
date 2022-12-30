@@ -1,0 +1,42 @@
+<html>
+<head>
+<style>
+body {margin: 0;background-color: darkgray;}
+canvas {width: 100vw;height: 100vh;display: block;}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<script>
+// https://drafts.fxtf.org/geometry/#dictdef-dommatrix2dinit
+/* global DOMMatrix */
+
+function perspectiveMatrix (fov, aspect, near, far) {
+  let f = Math.tan(Math.PI * 0.5 - 0.5 * fov)
+  let inv = 1.0 / (near - far)
+
+  return new DOMMatrix([
+    f / aspect, 0, 0, 0,
+    0, f, 0, 0,
+    0, 0, (near + far) * inv, -1,
+    0, 0, near * far * inv * 2, 0
+  ])
+}
+
+var fov = 60 * Math.PI / 180
+var aspect = 640 / 480
+var near = 1
+var far = 200
+
+let identity = new DOMMatrix()
+let projection = perspectiveMatrix(fov, aspect, near, far)
+
+console.log(identity)
+console.log(projection)
+console.log(projection.multiply(identity))
+
+</script>
+</body>
+</html>
+
+

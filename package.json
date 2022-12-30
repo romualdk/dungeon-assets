@@ -1,0 +1,32 @@
+{
+  "name": "dungeon-assets",
+  "version": "1.0.0",
+  "description": "Dungeon assets generator",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "npx webpack --mode=production",
+    "start": "npx webpack-dev-server"
+  },
+  "author": "Romuald Kowalczyk",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romualdk/dungeon-assets.git"
+  },
+  "keywords": [
+    "rpg",
+    "dungeon",
+    "assets",
+    "generator"
+  ],
+  "bugs": {
+    "url": "https://github.com/romualdk/dungeon-assets/issues"
+  },
+  "homepage": "https://github.com/romualdk/dungeon-assets#readme"
+}
